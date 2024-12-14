@@ -1,38 +1,39 @@
+from ClassesAbstratas.NomeAbs import NomeAbstrato
 import re
 
-class Nome:
+class Nome(NomeAbstrato):
     def __init__(self, nome = ''):
+        super().__init__(nome)
         self.nome = nome
 
-    def valida_nome(self, nome):
-        if not nome.strip():
-            raise ValueError("Nome não pode estar vazio")
-        return nome.title()
+    def verifica_nome_vazio(self, string):
+        if not string.strip():
+            raise ValueError("Nome não pode estar em branco")
+        return string.title()
 
     def contem_numero(self, string):
-        checagem =  bool(re.search(r'\d', string))
+        checagem = bool(re.search(r'\d', string))
         if checagem:
             raise ValueError
 
     def set_nome(self):
         while True:
             try:
-                self.nome = self.valida_nome(input("Digite seu nome: "))
+                self.nome = self.verifica_nome_vazio(input("Digite um nome: "))
                 self.contem_numero(self.nome)
                 break
             except ValueError:
-                print('Nome não pode ser em branco ou conter números')
+                print("Nome não pode estar em branco ou conter números!")
 
     def get_nome(self):
-        return self.nome
-
-    def mostra_nome(self):
-        print("Nome: %s" %self.nome)
+        return print("O nome é: %s" %self.nome)
 
 
 
 nome = Nome()
 nome.set_nome()
-nome.mostra_nome()
+nome.get_nome()
+
+
 
 
