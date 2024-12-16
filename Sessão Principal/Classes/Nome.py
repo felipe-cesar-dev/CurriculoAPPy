@@ -30,10 +30,5 @@ class Nome(NomeAbstrato):
 
 
 
-nome = Nome()
-nome.set_nome()
-nome.get_nome()
-
-
 
 
