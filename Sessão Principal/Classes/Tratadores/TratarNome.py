@@ -1,17 +1,10 @@
 class TratarNome:
-    def __init__(self, nome = ''):
-        self.nome = nome
-    
-    def verificar_alfanum(self, string: str):
-        while True:
-            try:
-                if not string.isalpha():
-                    raise ValueError("Digite um nome válido e sem números!")
-                else:
-                    break
-            except ValueError as e:
-                print(e)
-                string = input("Digite novamente: ")
+    def verificar_nome(self, nome: str) -> bool:
+        return nome.strip().isalpha()
 
-    
-        
+    def capturar_nome(self) -> str:
+        while True:
+            nome = input("Digite um nome: ")
+            if self.verificar_nome(nome):
+                return nome
+            print("Digite um nome válido (sem números).")

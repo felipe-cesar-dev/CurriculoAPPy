@@ -1,17 +1,15 @@
-from ClassesAbstratas.NomeABS import NomeABS
 from Tratadores.TratarNome import TratarNome
+class Nome:
+    def __init__(self):
+        self._nome = ""
+        self.tratador = TratarNome()
 
+    def capturar_nome(self):
+        self._nome = self.tratador.capturar_nome()
 
-class Nome(NomeABS):
-    def __init__(self, tratarnome: TratarNome, nome = ''):
-        super().__init__(tratarnome, nome = '')
-        self._nome = nome
-        self._tratarnome = tratarnome
+    def imprimir_nome(self):
+        print("O nome é: %s" %self._nome)
 
-    def set_nome(self):
-        self._nome = input("Digite um nome: ")
-        self._tratarnome.verificar_alfanum(self._nome)
-        
-
-n = Nome(TratarNome())
-n.set_nome()
+nome = Nome()
+nome.capturar_nome()
+nome.imprimir_nome()
