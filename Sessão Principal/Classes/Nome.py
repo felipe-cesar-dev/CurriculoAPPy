@@ -10,7 +10,3 @@ class Nome:
 
     def imprimir_nome(self):
         print("O nome é: %s" %self._nome)
-
-nome = Nome()
-nome.capturar_nome()
-nome.imprimir_nome()

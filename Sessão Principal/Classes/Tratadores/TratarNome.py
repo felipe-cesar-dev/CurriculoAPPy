@@ -11,7 +11,3 @@ class TratarNome:
             if self.verificar_nome_vazio(nome) and self.verificar_is_numero(nome):
                 return nome
             print("Digite um nome válido (sem números).")
-
-
-a = TratarNome()
-a.capturar_nome()
