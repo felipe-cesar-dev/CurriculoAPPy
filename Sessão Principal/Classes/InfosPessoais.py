@@ -14,7 +14,4 @@ class Data:
         print(self.data)
 
 
-a = Data()
-a.tratar_data()
-a.imprime_data()
 
