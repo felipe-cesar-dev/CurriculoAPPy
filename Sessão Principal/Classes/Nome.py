@@ -1,4 +1,5 @@
 from Tratadores.TratarNome import TratarNome
+
 class Nome:
     def __init__(self):
         self._nome = ""
